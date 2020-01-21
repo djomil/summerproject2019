@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <title>E-SRUC</title>
+    <%= csrf_meta_tags %>
+      
+     
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      
+ <header class="main" >
+
+<h1><%= @page_title %></h1>
+</header>
+    
+      
+      <nav class="navbar navbar-expand-lg " style="background-color: #3CB371;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+          
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+          <a href="/"><img class="navbar-brand" src="/assets/sruc_logo" alt="HomePage" style="width:65px"></a>
+        
+      </li>
+              <li class="nav-item active">
+            <a class="nav-link" href="/about/index" style="color:White">About Us</a></li>
+        
+        <li class="nav-item active">
+        <a class="nav-link" href="<%= grain_converter_chart_path %>" style="color:White">Grain yields</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= grass_converter_chart_path %>" style="color:White">Grass yields </a>
+      </li>   
+        <li class="nav-item active">
+        <a class="nav-link" href="<%= tuber_chart_path %>" style="color:White">Tuber yields</a>
+      </li>  
+        
+         
+       
+<!--            <li class="nav-item active">
+            <a class="nav-link" href="/statistics/index" style="color:White">Grain Statistics</a></li> -->
+        
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/contacts/index" style="color:White">Contact Us</a>
+      </li> 
+        
+      <li class="nav-item active">
+        <a class="nav-link" href="/about/help" style="color:White">Help?</a>
+      </li> 
+       
+          <% if current_user %>
+        <li class="nav-item active">
+        <a class="nav-link" href="<%= logout_path %>" style="color:White">Sign out</a>
+      </li>
+         <% end %>
+        <% unless current_user %>
+        <li class="nav-item active">
+        <a class="nav-link" href="<%= login_path %>" style="color:White">Sign in</a>
+      </li>
+         <% end %>
+    </ul> 
+      
+<p class="navbar-text pull-right" style="color:White">
+      <% if current_user %>
+    Logged in as <strong><%= current_user.email %></strong>.
+      <% end %>
+</p>
+  </div>
+      
+          
+         <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #3CB371;" style="color:White">
+    Add new records
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/grains">Grain</a>
+    <a class="dropdown-item" href="/tuberoses">Tuberose</a>
+    <a class="dropdown-item" href="/grasses">Grass</a>
+      <a class="dropdown-item" href="/plotsubplots">Plot and Subplot</a>
+      <a class="dropdown-item" href="/grain_allocations">Allocate grains</a>
+      <a class="dropdown-item" href="/tuberose_allocations">Allocate tuberose</a>
+      <a class="dropdown-item" href="/grass_allocations">Allocate grasses</a>
+       <% if current_user && current_user.admin %>
+      <a class="dropdown-item" href="/users">Add/Remove users</a>
+      <% end %>
+  </div>
+</div>
+    
+    
+</nav>  
+       <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+     
+    <%= yield %>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      </body>
+</html>
+
+<footer class="page-footer font-small blue">
+
+  <!-- javascript for displaying year adapted from https://www.w3schools.com/jsref/jsref_getfullyear.asp -->
+ 
+     
+   
+    <div class="footer-copyright text-center py-3">
+     <div style="background-color: #3CB371; ">
+ © <a id="date">©</a>
+       <p>Teamecho</p>
+    </div>
+
+    <script>
+        document.getElementById("date").innerHTML = new Date().getFullYear();
+     </script>
+         
+     </div>
+    
+        <script type="text/javascript">
+if(location.search.indexOf('r') < 0){
+    var hash = window.location.hash;
+    var loc = window.location.href.replace(hash, '');
+    loc += (loc.indexOf('?') < 0? '?' : '&') + 'r';
+    setTimeout(function(){window.location.href = loc + hash;}, 0.0000001);
+}
+</script>
+     
+      
+</footer>

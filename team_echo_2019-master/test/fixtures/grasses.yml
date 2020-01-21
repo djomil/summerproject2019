@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grass_id: 1
+  grass_type: 'grass white clover 1'
+
+two:
+  grass_id: 5
+  grass_type: 'grass red clover'

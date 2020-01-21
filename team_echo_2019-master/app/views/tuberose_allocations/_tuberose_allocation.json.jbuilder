@@ -1,0 +1,2 @@
+json.extract! tuberose_allocation, :id, :tuberose_allocation_id, :tuberose_id, :plotsubplot_id, :year_observation, :swede_and_pots_fwt, :percentage_root_dm, :percentage_100_dm_swede_leaf_dm_y, :percentage_crop_s, :percentage_root_s, :percentage_tug_s, :percentage_tw_s, :percentage_tug_a, :percentage_tw_a, :pH, :P, :K, :Mg, :OM, :replication, :rotation, :created_at, :updated_at
+json.url tuberose_allocation_url(tuberose_allocation, format: :json)

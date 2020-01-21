@@ -1,0 +1,2 @@
+json.extract! grain_allocation, :id, :grain_allocation_id, :grain_id, :plotsubplot_id, :year_observation, :percentage_85_DM_grain_y, :percentage_85_DM_straw_y, :spec_wt, :tgw, :tillers, :grain_on_ear, :length, :percentage_crop_s, :percentage_prg_s, :percentage_rc_s, :percentage_wc_s, :percentage_tug_s, :percentage_tw_s, :percentage_prg_a, :percentage_wc_a, :percentage_rc_a, :percentage_tug_a, :percentage_tw_a, :ph, :p, :k, :mg, :om, :created_at, :updated_at
+json.url grain_allocation_url(grain_allocation, format: :json)

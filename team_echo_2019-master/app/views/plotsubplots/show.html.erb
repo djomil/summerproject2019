@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Plotsubplot:</strong>
+  <%= @plotsubplot.plotsubplot_id %>
+</p>
+
+<p>
+  <strong>Plot:</strong>
+  <%= @plotsubplot.plot_id %>
+</p>
+
+<p>
+  <strong>Subplot:</strong>
+  <%= @plotsubplot.subplot_id %>
+</p>
+
+<%= link_to 'Edit', edit_plotsubplot_path(@plotsubplot) %> |
+<%= link_to 'Back', plotsubplots_path %>

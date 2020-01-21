@@ -1,0 +1,27 @@
+<%= form_with(model: tuberose, local: true) do |form| %>
+  <% if tuberose.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tuberose.errors.count, "error") %> prohibited this tuberose from being saved:</h2>
+
+      <ul>
+      <% tuberose.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tuberose_id %>
+    <%= form.text_field :tuberose_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tuberose_type %>
+    <%= form.text_field :tuberose_type %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

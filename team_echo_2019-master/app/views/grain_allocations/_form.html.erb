@@ -1,0 +1,164 @@
+<%= form_with(model: grain_allocation, local: true) do |form| %>
+  <% if grain_allocation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(grain_allocation.errors.count, "error") %> prohibited this grain_allocation from being saved:</h2>
+
+      <ul>
+      <% grain_allocation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :grain_allocation_id %>
+    <%= form.text_field :grain_allocation_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grain_id %>
+    <%= form.text_field :grain_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plotsubplot_id %>
+    <%= form.text_field :plotsubplot_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year_observation %>
+    <%= form.text_field :year_observation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_85_DM_grain_y %>
+    <%= form.text_field :percentage_85_DM_grain_y %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_85_DM_straw_y %>
+    <%= form.text_field :percentage_85_DM_straw_y %>
+  </div>
+
+  <div class="field">
+    <%= form.label :spec_wt %>
+    <%= form.text_field :spec_wt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tgw %>
+    <%= form.text_field :tgw %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tillers %>
+    <%= form.text_field :tillers %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grain_on_ear %>
+    <%= form.text_field :grain_on_ear %>
+  </div>
+
+  <div class="field">
+    <%= form.label :length %>
+    <%= form.text_field :length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_crop_s %>
+    <%= form.text_field :percentage_crop_s %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_prg_s %>
+    <%= form.text_field :percentage_prg_s %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_rc_s %>
+    <%= form.text_field :percentage_rc_s %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_wc_s %>
+    <%= form.text_field :percentage_wc_s %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_tug_s %>
+    <%= form.text_field :percentage_tug_s %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_tw_s %>
+    <%= form.text_field :percentage_tw_s %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_prg_a %>
+    <%= form.text_field :percentage_prg_a %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_wc_a %>
+    <%= form.text_field :percentage_wc_a %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_rc_a %>
+    <%= form.text_field :percentage_rc_a %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_tug_a %>
+    <%= form.text_field :percentage_tug_a %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_tw_a %>
+    <%= form.text_field :percentage_tw_a %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ph %>
+    <%= form.text_field :ph %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p %>
+    <%= form.text_field :p %>
+  </div>
+
+  <div class="field">
+    <%= form.label :k %>
+    <%= form.text_field :k %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mg %>
+    <%= form.text_field :mg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :om %>
+    <%= form.text_field :om %>
+  </div>
+
+<div class="field">
+    <%= form.label :replication %>
+    <%= form.number_field :replication %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rotation %>
+    <%= form.text_field :rotation %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

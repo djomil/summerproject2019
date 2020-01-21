@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tuberose_id: 1
+  tuberose_type: 'potato'
+
+two:
+  tuberose_id: 2 
+  tuberose_type: 'swede'

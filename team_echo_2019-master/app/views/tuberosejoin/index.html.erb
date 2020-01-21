@@ -1,0 +1,143 @@
+<html lang="en">
+   
+<head>
+    
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript"  src=" https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript"  src=" https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.24/build/pdfmake.min.js" ></script>
+    <script type="text/javascript"  src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.24/build/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
+
+   
+     
+</head>
+<body>
+
+<div>
+<h2>Tuberose Table</h2>
+    <p style="text-align: justify;">Type something in the input field to search the table for tuberose types, various years captured, rotation, etc.<br> 
+    Otherwise, you might want to use the more advanced search bar to look for a specific timespan.</p>  
+
+  <br>
+   <table border="0" cellspacing="5" cellpadding="5">
+        <tbody><tr>
+            <td>From Year:</td>
+            <td><input type="text" id="min" name="min"></td>
+        </tr>
+        <tr>
+            <td>To Year:</td>
+            <td><input type="text" id="max" name="max"></td>
+        </tr>
+    </tbody></table>
+
+  <table id="tuberose" class="table table-bordered" class="display" style="width:100%">
+
+
+    <thead>
+        
+      <tr>
+      <th>Year</th>
+      <th>Tuberose Type</th>
+      <th>Plot</th>
+      <th>Subplot</th>
+      <th>Swedes and Pot Fresh Weight</th>
+      <th>Root DM %</th>
+      <th>100% Dry Matter Swede Leaf DM Y</th>
+      <th>Crop s %</th>
+      <th>Root s %</th>
+      <th>Tug s %</th>
+      <th>Tw s %</th>
+      <th>Tug a % </th>
+      <th>Tw a %</th>
+      <th>pH</th>
+      <th>P</th>
+      <th>K</th>
+      <th>Mg</th>
+      <th>OM</th>
+      <th>Replication</th>
+      <th>Rotation</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+   
+         <%  @Tuberdata.each do |tuberdata| %>
+        <tr>
+         <td><%= tuberdata["year_observation"] %></td>
+        <td><%= tuberdata["tuberose_type"] %></td>
+        <td><%= tuberdata["plot_id"] %></td>
+        <td><%= tuberdata["subplot_id"] %></td>
+        <td><%= tuberdata["swede_and_pots_fwt"] %></td>
+        <td><%= tuberdata["percentage_root_dm"] %></td>
+        <td><%= tuberdata["percentage_100_dm_swede_leaf_dm_y"] %></td>
+        <td><%= tuberdata["percentage_crop_s"] %></td>
+        <td><%= tuberdata["percentage_root_s"] %></td>
+        <td><%= tuberdata["percentage_tug_s"] %></td>
+        <td><%= tuberdata["percentage_tw_s"] %></td>
+        <td><%= tuberdata["percentage_tug_a"]%></td>
+        <td><%= tuberdata["percentage_tw_a"] %></td>
+        <td><%= tuberdata["ph"] %></td>
+        <td><%= tuberdata["p"] %></td>
+        <td><%= tuberdata["k"] %></td>
+        <td><%= tuberdata["mg"] %></td>
+        <td><%= tuberdata["om"] %></td>
+         <td><%= tuberdata["replication"] %></td>
+         <td><%= tuberdata["rotation"] %></td>
+      </tr>
+        
+         <% end %>
+    </tbody>
+    
+  </table>
+  
+</div>
+
+      <script>
+           /* This script is used to paginate the table,
+     paginate it and implement a simple search form in the table with help from https://datatables.net/examples/ */
+          
+$('#tuberose').DataTable({
+     dom: 'Bfrtip',
+     buttons: [
+  'copy', 'csv', 'excel', 'pdf', 'print'
+                        ],
+                    }); 
+          
+           /* This code is used to implement a search between a specific timespan 
+    The timespan is comprised between two years, as they are stored in the tuberose_allocation table with help from https://datatables.net/examples/ */
+          $.fn.dataTable.ext.search.push(
+    function( settings, data, dataIndex ) {
+        var min = parseInt( $('#min').val(), 10 );
+        var max = parseInt( $('#max').val(), 10 );
+        var year = parseFloat( data[0] ) || 0; // use data for the year column
+ 
+        if ( ( isNaN( min ) && isNaN( max ) ) ||
+             ( isNaN( min ) && year <= max ) ||
+             ( min <= year   && isNaN( max ) ) ||
+             ( min <= year   && year <= max ) )
+        {
+            return true;
+        }
+        return false;
+    }
+);
+ 
+    var table = $('#tuberose').DataTable();
+     
+    // Event listener, that given the two range above, adapts the table
+    $('#min, #max').keyup( function() {
+        table.draw();
+    } );
+  </script>  
+    
+
+
+    
+    
+   
+</body>
+</html>

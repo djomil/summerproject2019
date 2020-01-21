@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Plotsubplots</h1>
+
+<%= paginate @kaleo,  left: 3, right: 3, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm"  %>
+
+<!-- The following code was based on a video found on www.driftingruby.com/episodes/importing-and-exporting-csv-data -->
+
+<%= link_to "Export CSV", plotsubplots_url(format: :csv), class: 'btn btn-primary' %>
+
+<%= link_to 'New Plotsubplot', new_plotsubplot_path, class: "btn btn-success" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plotsubplot</th>
+      <th>Plot</th>
+      <th>Subplot</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kaleo.each do |plotsubplot| %>
+      <tr>
+        <td><%= plotsubplot.plotsubplot_id %></td>
+        <td><%= plotsubplot.plot_id %></td>
+        <td><%= plotsubplot.subplot_id %></td>
+        <td><%= link_to 'Show', plotsubplot, class: 'btn btn-secondary' %></td>
+        <td><%= link_to 'Edit', edit_plotsubplot_path(plotsubplot), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', plotsubplot, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= paginate @kaleo,  left: 3, right: 3, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm"  %>
+<%= link_to 'New Plotsubplot', new_plotsubplot_path, class: "btn btn-success" %>

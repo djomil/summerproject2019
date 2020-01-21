@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grain_allocation_id: 176
+  grain_id: 1
+  plotsubplot_id: 69
+  year_observation: '2008'
+  percentage_85_dm_grain_y: 4.84
+  percentage_85_dm_straw_y: 2.71
+  spec_wt: 47.87
+  tgw: 28.55
+  tillers: 739.926
+  grain_on_ear: 36.2
+  length: 118.8
+  percentage_crop_s: 35.1
+  percentage_prg_s: 36.2
+  percentage_rc_s: 64.3
+  percentage_wc_s: 45.3
+  percentage_tug_s: 32.5
+  percentage_tw_s: 24.4
+  percentage_prg_a: 22.2
+  percentage_wc_a: 44.5
+  percentage_rc_a: 55.7
+  percentage_tug_a: 89.9
+  percentage_tw_a: 87.6
+  ph: 6.1
+  p: 9.8
+  k: 109
+  mg: 167
+  om: 9.1
+  replication: 2
+  rotation: 't1'
+
+two:
+  grain_allocation_id: 177 
+  grain_id: 5
+  plotsubplot_id: 2
+  year_observation: '2009' 
+  percentage_85_dm_grain_y: 1.26
+  percentage_85_dm_straw_y: 0.46
+  spec_wt: 56.1
+  tgw: 39.85
+  tillers: 959.904
+  grain_on_ear: 25.7
+  length: 50.6
+  percentage_crop_s: 15.4 
+  percentage_prg_s: 35.6
+  percentage_rc_s: 67.9
+  percentage_wc_s: 42.6
+  percentage_tug_s: 24.5
+  percentage_tw_s: 21.2
+  percentage_prg_a: 86.5
+  percentage_wc_a: 49.8
+  percentage_rc_a: 42.4
+  percentage_tug_a: 41.7
+  percentage_tw_a: 52.5
+  ph: 6.3
+  p: 16.7
+  k: 81.2
+  mg: 131.0
+  om: 9.13
+  replication: 1 
+  rotation: 't2'

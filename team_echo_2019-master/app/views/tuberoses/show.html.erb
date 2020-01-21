@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tuberose:</strong>
+  <%= @tuberose.tuberose_id %>
+</p>
+
+<p>
+  <strong>Tuberose type:</strong>
+  <%= @tuberose.tuberose_type %>
+</p>
+
+<%= link_to 'Edit', edit_tuberose_path(@tuberose) %> |
+<%= link_to 'Back', tuberoses_path %>

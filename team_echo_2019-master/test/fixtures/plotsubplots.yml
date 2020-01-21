@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plotsubplot_id: 2
+  plot_id: 1
+  subplot_id: 'a'
+
+two:
+  plotsubplot_id: 6
+  plot_id: 2
+  subplot_id: 'b'

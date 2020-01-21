@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grass_allocation_id: 401
+  grass_id: 5 
+  plotsubplot_id: 17 
+  year_observation: '2018'
+  percentage_100_dm_gm1: 4.5
+  percentage_100_dm_gm2: 3.7
+  percentage_100_dm_gm3: 2.1
+  percentage_100_dm_gm4: 9.4
+  percentage_100_dm_gm5: 3.2
+  percentage_100_dm_gm6: 5.8
+  percentage_100_dm_silage1: 5.5 
+  percentage_100_dm_silage2: 7.8
+  d_value_1: 3.7
+  d_value_2: 2.5
+  me_1: 4.5
+  me_2: 3.4
+  lugd: 157.9
+  percentage_prg_a: 4.6
+  percentage_tim_a: 7.8
+  percentage_wc_a: 4.2
+  percentage_tug_a: 5.8
+  percentage_tw_a: 4.3
+  ph: 6.3
+  p: 15.9
+  k: 76.9
+  mg: 297.0
+  om: 10.2
+  replication: 1
+  rotation: 't2'
+
+two:
+  grass_allocation_id: 51
+  grass_id: 1
+  plotsubplot_id: 46
+  year_observation: '1994'
+  percentage_100_dm_gm1: 6.9
+  percentage_100_dm_gm2: 5.8 
+  percentage_100_dm_gm3: 4.7
+  percentage_100_dm_gm4: 3.6
+  percentage_100_dm_gm5: 2.5
+  percentage_100_dm_gm6: 1.4
+  percentage_100_dm_silage1: 2.8
+  percentage_100_dm_silage2: 1.7
+  d_value_1: 5.3
+  d_value_2: 4.2
+  me_1: 3.1
+  me_2: 2.9
+  lugd: 290.0
+  percentage_prg_a: 53.0
+  percentage_tim_a: 42.9
+  percentage_wc_a:  31.8
+  percentage_tug_a: 20.7
+  percentage_tw_a:  19.6
+  ph: 5.6
+  p: 14.0
+  k: 67.0
+  mg: 57.0
+  om: 6.7
+  replication: 2
+  rotation: 't1'

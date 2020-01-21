@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<h2 style = "font-family: Helvetica;">Tuberose Allocations</h2>
+
+<%= paginate @cannonball,  left: 3, right: 3, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm"  %>
+
+<!-- The following code was based on a video found on www.driftingruby.com/episodes/importing-and-exporting-csv-data -->
+
+<%= link_to "Export CSV", tuberose_allocations_url(format: :csv), class: 'btn btn-primary' %>
+
+<%= link_to 'New Tuberose Allocation', new_tuberose_allocation_path, class: "btn btn-success" %>
+
+<table>
+  <thead>
+    <tr>
+      <th style = "font-family: Helvetica;">Tuberose Allocation</th>
+      <th style = "font-family: Helvetica;">Tuberose</th>
+      <th style = "font-family: Helvetica;">Plotsubplot</th>
+      <th style = "font-family: Helvetica;">Year Observation</th>
+      <th style = "font-family: Helvetica;">Swede and Pots fwt</th>
+      <th style = "font-family: Helvetica;">Percentage Root DM</th>
+      <th style = "font-family: Helvetica;">Percentage 100 dm Swede Leaf dm y</th>
+      <th style = "font-family: Helvetica;">Percentage Crop s</th>
+      <th style = "font-family: Helvetica;">Percentage Root s</th>
+      <th style = "font-family: Helvetica;">Percentage Tug s</th>
+      <th style = "font-family: Helvetica;">Percentage Tw s</th>
+      <th style = "font-family: Helvetica;">Percentage Tug a</th>
+      <th style = "font-family: Helvetica;">Percentage Tw a</th>
+      <th style = "font-family: Helvetica;">pH</th>
+      <th style = "font-family: Helvetica;">P</th>
+      <th style = "font-family: Helvetica;">K</th>
+      <th style = "font-family: Helvetica;">Mg</th>
+      <th style = "font-family: Helvetica;">OM</th>
+      <th style = "font-family: Helvetica;">Replication</th>
+      <th style = "font-family: Helvetica;">Rotation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cannonball.each do |tuberose_allocation| %>
+      <tr>
+        <td><%= tuberose_allocation.tuberose_allocation_id %></td>
+        <td><%= tuberose_allocation.tuberose_id %></td>
+        <td><%= tuberose_allocation.plotsubplot_id %></td>
+        <td><%= tuberose_allocation.year_observation %></td>
+        <td><%= tuberose_allocation.swede_and_pots_fwt %></td>
+        <td><%= tuberose_allocation.percentage_root_dm %></td>
+        <td><%= tuberose_allocation.percentage_100_dm_swede_leaf_dm_y %></td>
+        <td><%= tuberose_allocation.percentage_crop_s %></td>
+        <td><%= tuberose_allocation.percentage_root_s %></td>
+        <td><%= tuberose_allocation.percentage_tug_s %></td>
+        <td><%= tuberose_allocation.percentage_tw_s %></td>
+        <td><%= tuberose_allocation.percentage_tug_a %></td>
+        <td><%= tuberose_allocation.percentage_tw_a %></td>
+        <td><%= tuberose_allocation.ph %></td>
+        <td><%= tuberose_allocation.p %></td>
+        <td><%= tuberose_allocation.k %></td>
+        <td><%= tuberose_allocation.mg %></td>
+        <td><%= tuberose_allocation.om %></td>
+        <td><%= tuberose_allocation.replication %></td>
+        <td><%= tuberose_allocation.rotation %></td>
+        <td><%= link_to 'Show', tuberose_allocation, class: 'btn btn-secondary' %></td>
+        <td><%= link_to 'Edit', edit_tuberose_allocation_path(tuberose_allocation), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', tuberose_allocation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= paginate @cannonball,  left: 3, right: 3, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm"  %>
+<%= link_to 'New Tuberose Allocation', new_tuberose_allocation_path, class: "btn btn-success" %>

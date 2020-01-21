@@ -1,0 +1,162 @@
+<%= form_with(model: grass_allocation, local: true) do |form| %>
+  <% if grass_allocation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(grass_allocation.errors.count, "error") %> prohibited this grass_allocation from being saved:</h2>
+
+      <ul>
+      <% grass_allocation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :grass_allocation_id %>
+    <%= form.text_field :grass_allocation_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grass_id %>
+    <%= form.text_field :grass_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plotsubplot_id %>
+    <%= form.text_field :plotsubplot_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year_observation %>
+    <%= form.text_field :year_observation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_100_dm_gm1 %>
+    <%= form.text_field :percentage_100_dm_gm1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_100_dm_gm2 %>
+    <%= form.text_field :percentage_100_dm_gm2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_100_dm_gm3 %>
+    <%= form.text_field :percentage_100_dm_gm3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_100_dm_gm4 %>
+    <%= form.text_field :percentage_100_dm_gm4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_100_dm_gm5 %>
+    <%= form.text_field :percentage_100_dm_gm5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_100_dm_gm6 %>
+    <%= form.text_field :percentage_100_dm_gm6 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_100_dm_silage1 %>
+    <%= form.text_field :percentage_100_dm_silage1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_100_dm_silage2 %>
+    <%= form.text_field :percentage_100_dm_silage2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :d_value_1 %>
+    <%= form.text_field :d_value_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :d_value_2 %>
+    <%= form.text_field :d_value_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :me_1 %>
+    <%= form.text_field :me_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :me_2 %>
+    <%= form.text_field :me_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lugd %>
+    <%= form.text_field :lugd %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_prg_a %>
+    <%= form.text_field :percentage_prg_a %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_tim_a %>
+    <%= form.text_field :percentage_tim_a %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_wc_a %>
+    <%= form.text_field :percentage_wc_a %>
+  </div>
+
+ <div class="field">
+    <%= form.label :percentage_tug_a %>
+    <%= form.text_field :percentage_tug_a %>
+  </div>
+
+ <div class="field">
+    <%= form.label :percentage_tw_a %>
+    <%= form.text_field :percentage_tw_a %>
+  </div>
+
+ <div class="field">
+    <%= form.label :ph %>
+    <%= form.text_field :ph %>
+  </div>
+
+ <div class="field">
+    <%= form.label :p %>
+    <%= form.text_field :p %>
+  </div>
+
+ <div class="field">
+    <%= form.label :k %>
+    <%= form.text_field :k %>
+  </div>
+
+ <div class="field">
+    <%= form.label :mg %>
+    <%= form.text_field :mg %>
+  </div>
+
+ <div class="field">
+    <%= form.label :om %>
+    <%= form.text_field :om %>
+  </div>
+
+ <div class="field">
+    <%= form.label :replication %>
+    <%= form.text_field :replication %>
+  </div>
+
+ <div class="field">
+    <%= form.label :rotation %>
+    <%= form.text_field :rotation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

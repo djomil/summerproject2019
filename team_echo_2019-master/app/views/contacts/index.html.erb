@@ -1,0 +1,53 @@
+<h2>Contact Us</h2>
+
+<head>
+    
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+     
+
+     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+</head>
+
+ <div id="mapid"></div>
+
+
+
+<!-- The script below was taken from https://leafletjs.com -->
+<!-- It shows the position of the centre in a map, as well as the fields where trials take place -->
+<script>
+var map = L.map('mapid').setView([57.1865, -2.2124], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([57.1865, -2.2124]).addTo(map)
+    .bindPopup('We are here!')
+    .openPopup();
+    
+L.marker([57.175160, -2.258608]).addTo(map)
+    .bindPopup('This is where the magic happens')
+    .openPopup();
+    
+</script>
+
+
+
+
+<p style="font-family:georgia"><strong>If you want to have further information on our activities, feel free to contact us:</strong></p>
+
+<div style="font-family:serif; font-style:italic;">
+   Craibstone Estate, Ferguson Building, Aberdeen AB21 9YA<br>
+   5QMP+WR<br>
+   +44(0)1224711000<br>
+<a href = "mailto: Robin.Walker@sruc.ac.uk">Robin.Walker@sruc.ac.uk</a><br>
+  <a href="https://www.sruc.ac.uk/info/120170/aberdeen_campus" class="btn btn-dark btn-xs active" role="button" aria-pressed="true" style="font-family:serif;">Aberdeen Campus Website</a>  
+</div>
+
+
+

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Grass:</strong>
+  <%= @grass.grass_id %>
+</p>
+
+<p>
+  <strong>Grass type:</strong>
+  <%= @grass.grass_type %>
+</p>
+
+<%= link_to 'Edit', edit_grass_path(@grass) %> |
+<%= link_to 'Back', grasses_path %>

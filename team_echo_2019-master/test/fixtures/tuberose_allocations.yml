@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tuberose_allocation_id: 103
+  tuberose_id: 2
+  plotsubplot_id: 68 
+  year_observation: '2015' 
+  swede_and_pots_fwt: 44.34 
+  percentage_root_dm: 11.93 
+  percentage_100_dm_swede_leaf_dm_y: 0.78
+  percentage_crop_s: 9.8 
+  percentage_root_s: 8.7
+  percentage_tug_s: 7.6
+  percentage_tw_s: 6.5
+  percentage_tug_a: 5.4
+  percentage_tw_a: 4.3
+  ph: 6.1
+  p: 5.9
+  k: 98.3
+  mg: 176.0
+  om: 9.9
+  replication: 2
+  rotation: 't1'
+
+two:
+  tuberose_allocation_id: 105 
+  tuberose_id: 1
+  plotsubplot_id: 8 
+  year_observation: '2016'
+  swede_and_pots_fwt: 6.7
+  percentage_root_dm: 9.8
+  percentage_100_dm_swede_leaf_dm_y: 1.9
+  percentage_crop_s: 2.8
+  percentage_root_s: 3.7 
+  percentage_tug_s: 4.6
+  percentage_tw_s: 5.5
+  percentage_tug_a: 6.4 
+  percentage_tw_a: 7.3
+  ph: 5.8
+  p: 12.0 
+  k: 54.4
+  mg: 165.0
+  om: 9.44
+  replication: 1
+  rotation: 't2' 

@@ -1,0 +1,27 @@
+<%= form_with(model: grain, local: true) do |form| %>
+  <% if grain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(grain.errors.count, "error") %> prohibited this grain from being saved:</h2>
+
+      <ul>
+      <% grain.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :grain_id %>
+    <%= form.text_field :grain_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grain_type %>
+    <%= form.text_field :grain_type %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

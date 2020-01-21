@@ -1,0 +1,14 @@
+{
+  "name": "teamecho",
+  "private": true,
+  "dependencies": {
+      "leaflet": "*"
+
+  }
+    
+
+     "devDependencies": {
+    "jasmine": "*"
+  }
+
+}

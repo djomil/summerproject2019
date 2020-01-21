@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h2 style = "font-family: Helvetica;">Grasses</h2>
+
+<!-- The following code was based on a video found on www.driftingruby.com/episodes/importing-and-exporting-csv-data -->
+
+<%= link_to "Export CSV", grasses_url(format: :csv), class: 'btn btn-primary' %>
+<%= link_to 'New Grass', new_grass_path, class: "btn btn-success" %>
+
+<table>
+  <thead>
+    <tr>
+      <th style = "font-family: Helvetica;">Grass</th>
+      <th style = "font-family: Helvetica;">Grass type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grasses.each do |grass| %>
+      <tr>
+        <td><%= grass.grass_id %></td>
+        <td><%= grass.grass_type %></td>
+        <td><%= link_to 'Show', grass, class: 'btn btn-secondary' %></td>
+        <td><%= link_to 'Edit', edit_grass_path(grass), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', grass, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Grass', new_grass_path, class: "btn btn-success" %>

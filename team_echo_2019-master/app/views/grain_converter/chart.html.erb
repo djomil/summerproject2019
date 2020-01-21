@@ -1,0 +1,379 @@
+<html lang="en">
+<head>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharttable.org/master/jquery.highchartTable-min.js"></script> 
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>  
+   
+</head>
+<div class="card-group">
+    <div class="col-sm-2" style="background-color: #3CB371">
+        <b> <%= link_to 'View our records', grainjoin_index_path %></b>
+        <h4 style="color:White"> Soil Options:</h4>
+             <ul style="color:White">
+                 <li>pH (for the soil)</li> 
+                            <br>
+                         <li>P (level of soil Phosphorus)</li> 
+                            <br>
+                         <li>K (level of soil Potassium)</li> 
+                            <br>
+                         <li>MG (level of soil Magnesium)</li> 
+                            <br>
+                         <li>OM (level of soil Organic Matter)</li> 
+                            <br>
+                            <h4> Others: </h4>
+                      <li>85% Dry matter grain y (Dry Matter of the Soil for the Yield for a Specific Treatment, in case it corresponds to 85%)</li> 
+                            <br>
+                      <li>85% Dry matter straw y (Dry Matter of the Soil for the Straw for a Specific Treatment, in case it corresponds to 85%)</li> 
+                            <br>
+                      <li>Spec Wt (Specific Weight)</li> 
+                            <br>
+                         <li>Tgw (Thousand Grain Weight)</li> 
+                            <br>
+                       <li>tillers</li> 
+                            <br>
+                      <li>grain on ear</li> 
+                            <br>
+                     <li>length</li> 
+                            <br>
+                 </ul>
+                            <h4 style="color:White" > Percentages </h4>
+        <ul style="color:White">
+                       <li>Percentage crop s (Ground cover of crops in spring)</li> 
+                            <br>
+                              <li>Percentage prg s (Ground cover of perennial ryegrass in spring)</li> 
+                            <br>
+                             <li>Percentage rc s (Ground cover of red clover in spring)</li> 
+                            <br>
+                            <li>Percentage wc s (Ground cover of white clover in spring)</li> 
+                            <br> 
+                              <li>Percentage tug s (Ground cover of unsown grass in spring)</li> 
+                            <br>
+                             <li>Percentage tw s (Ground cover of other weeds in spring)</li> 
+                            <br>
+                              <li>Percentage prg a (Ground cover of perennial ryegrass in autumn)</li> 
+                            <br>
+                             <li>Percentage wc a (Ground cover of white clover in autumn)</li> 
+                            <br>
+                             <li>Percentage rc a (Ground cover of red clover in autumn)</li> 
+                            <br>
+                              <li>Percentage tug a (Ground cover of unsown grass in autumn)</li> 
+                            <br>
+                             <li>Percentage tw a (Ground cover of other weeds in autumn)</li> 
+                          </ul>
+                            <br>
+                            <h4 style="color:White"> Rotation & Replication </h4> 
+                     <ul style="color:White">
+                           <li> Replication (How many complete rotations are repeated)</li> 
+                            <br>
+                            <li>Rotation (Practice of Growing a series of Dissimilar Types of Crops in the Same Area in Sequenced Seasons)</li> 
+                           </ul>
+                            <br>
+                            <b> <%= link_to 'View our records', grainjoin_index_path %></b>
+                           
+                        
+                       </div>
+
+        
+         <div class="col-sm-10" >
+           
+<table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Average grain on ear for Spring Oat and undersown in subplots a and b </caption>
+          
+
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="avggoe"> Average Grain on ear for springoats_undersown in subplot a</th>
+      <th class ="avggoe"> Average Grain on ear for springoats_undersown in subplot b</th>
+      </tr>
+    </thead>
+
+    <tbody id="myTable">
+
+   
+         <%  @Oatyield .each do |oatyield | %>
+        <tr>
+        <td class ="year"><%=  oatyield["year_observation"] %></td>
+        <td class ="phosphorus"><%=  oatyield["oat_yield_round_a"] %></td> 
+        <td class ="phosphorus"><%=  oatyield["oat_yield_round_b"] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+        </table>
+             
+             
+                   
+             <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+
+         <caption>Average grain on ear for barley undersown and white clover in subplots a and b </caption>
+
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="avggoe"> Average Grain on ear for barley undersown_whiteclover in subplots a</th>
+      <th class ="avggoe"> Average Grain on ear for barley undersown_whiteclover in subplots b</th>
+      </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Barleyyield.each do |barleyyield| %>
+        <tr>
+        <td class ="year"><%= barleyyield["year_observation"] %></td>
+        <td class ="avgoe"><%= barleyyield["barley_yield_round_a"] %></td> 
+        <td class ="avgoe"><%= barleyyield["barley_yield_round_b"] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+        </table>
+             
+
+                          <br>
+             <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Average Spring Oat and undersown tiller yields for subplots a and b (unit= per m2) </caption>
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="avggoe"> Average Tillers yields for spring oat_undersown in subplot a</th>
+          <th class ="avggoe"> Average Tillers yields for spring oat_undersown in subplot a</th>
+      </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Oattilleryield.each do |oattilleryield| %>
+        <tr>
+        <td class ="year"><%= oattilleryield["year_observation"] %></td>
+        <td class ="avggoe"><%= oattilleryield["springoats_tillers_round_a"] %></td> 
+        <td class ="avggoe"><%= oattilleryield["springoats_tillers_round_b"] %></td> 
+      </tr>
+      <% end %>
+    </tbody>
+        </table>
+           
+             
+                <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Average Barley undersown and white clover tiller yields for subplots a and b (unit= per m2)</caption>
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="avggoe"> Average Tillers for Barley undersown and white clover in subplot a</th>
+      <th class ="avggoe"> Average Tillers for Barley undersown and white clover in subplot b</th>
+      </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Barleytilleryield.each do |barleytilleryield| %>
+        <tr>
+        <td class ="year"><%=  barleytilleryield["year_observation"] %></td>
+        <td class ="avggoe"><%=  barleytilleryield["barley_tillers_round_a"] %></td> 
+        <td class ="avggoe"><%=  barleytilleryield["barley_tillers_round_b"] %></td> 
+      </tr>
+      <% end %>
+    </tbody>
+        </table>
+             
+             
+                <br>
+               <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Average specific wreight of spring oats and undersown in subplots a and b (unit= Kg/hl) </caption>
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="avggoe"> Average Specific weight of spring oats and undersown in subplot a</th>
+      <th class ="avggoe"> Average Specific weight of spring oats and undersown in subplot b</th>
+      </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Oatspecweight.each do |oatspecweight| %>
+        <tr>
+        <td class ="year"><%= oatspecweight["year_observation"] %></td>
+        <td class ="avggoe"><%= oatspecweight["springoats_specificweight_round_a"] %></td>
+         <td class ="avggoe"><%= oatspecweight["springoats_specificweight_round_b"] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+        </table>
+             
+             
+              <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Average specific wreight of barley undersown and white clover in subplots a and b (unit= Kg/hl) </caption>
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="avggoe"> Average Specific weight of barley undersown and white clover in subplots a</th>
+      <th class ="avggoe"> Average Specific weight of barley undersown and white clover in subplots b</th>
+        </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Barleyspecweight.each do |barleyspecweight| %>
+        <tr>
+        <td class ="year"><%= barleyspecweight["year_observation"] %></td>
+        <td class ="avggoe"><%= barleyspecweight["barley_specificweight_round_a"] %></td> 
+         <td class ="avggoe"><%= barleyspecweight["barley_specificweight_round_b"] %></td> 
+      </tr>
+      <% end %>
+    </tbody>
+        </table>
+             
+             <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Average Dry matter grain of Spring Oats and undersown in subplots a and b (unit= t/ha)</caption>
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="avggoe"> Average Dry matter Grain of spring oats and undersown in subplots a</th>
+        <th class ="avggoe"> Average Dry matter Grain of spring oats and undersown in subplots b</th>
+      </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Springoatsdrymattergrain.each do |springoatsdrymattergrain| %>
+        <tr>
+        <td class ="year"><%= springoatsdrymattergrain["year_observation"] %></td>
+        <td class ="avggoe"><%= springoatsdrymattergrain["springoats_drymattergrain_round_a"] %></td> 
+        <td class ="avggoe"><%= springoatsdrymattergrain["springoats_drymattergrain_round_b"] %></td>  
+      </tr>
+      <% end %>                    
+    </tbody>
+        </table>
+             
+             
+             <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Average Dry matter grain of barley undersown and white clover in subplots a and b (unit= t/ha) </caption>
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="avggoe"> Average Dry matter Grain of barley undersown and white clover in subplots a</th>
+      <th class ="avggoe"> Average Dry matter Grain of barley undersown and white clover in subplots b</th>
+        </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Barleydrymattergrain.each do |barleydrymattergrain| %>
+        <tr>
+        <td class ="year"><%= barleydrymattergrain["year_observation"] %></td>
+        <td class ="avggoe"><%= barleydrymattergrain["barley_drymattergrain_round_a"] %></td>
+       <td class ="avggoe"><%= barleydrymattergrain["barley_drymattergrain_round_b"] %></td>
+      </tr>
+      <% end %>                    
+    </tbody>
+        </table>
+             
+               
+
+               <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Average Dry matter straw of Spring Oats and undersown in subplots a and b (unit= t/ha)</caption>
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="avggoe"> Average Dry matter straw of springoats and undersown in subplots a</th>
+     <th class ="avggoe"> Average Dry matter straw of springoats and undersown in subplots b</th>
+      </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Springoatsdrymatterstraw.each do |springoatsdrymatterstraw| %>
+        <tr>
+        <td class ="year"><%= springoatsdrymatterstraw["year_observation"] %></td>
+        <td class ="avggoe"><%= springoatsdrymatterstraw["springoats_drymatterstraw_round_a"] %></td>  
+            <td class ="avggoe"><%= springoatsdrymatterstraw["springoats_drymatterstraw_round_b"] %></td> 
+      </tr>
+      <% end %>                    
+    </tbody>
+        </table>
+            
+              <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Average Dry matter straw of barley undersown and white clover in subplots a and b (unit= t/ha) </caption>
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="avggoe"> Average Dry matter straw of barley undersown and white clover in subplots a</th>
+      <th class ="avggoe"> Average Dry matter straw of barley undersown and white clover in subplots b</th>
+        </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Barleydrymatterstraw.each do |barleydrymatterstraw| %>
+        <tr>
+        <td class ="year"><%= barleydrymatterstraw["year_observation"] %></td>
+        <td class ="avggoe"><%= barleydrymatterstraw["barley_drymatterstraw_round_a"] %></td> 
+          <td class ="avggoe"><%= barleydrymatterstraw["barley_drymatterstraw_round_b"] %></td>
+      </tr>
+      <% end %>                    
+    </tbody>
+        </table>
+            
+                <br>
+               <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Soil nutrient values for rotation t1 </caption>
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="p"> Average Phosphorus values</th>
+      <th class ="k"> Average Potassium values</th>
+      <th class ="mg"> Average Magnessium values</th>
+        <th class ="pH"> Average pH values</th>   
+      </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Grainsoilvaluest1 .each do |grainsoilvaluest1 | %>
+        <tr>
+        <td class ="year"><%= grainsoilvaluest1["year_observation"] %></td>
+        <td class ="p"><%= grainsoilvaluest1["average_rounded_grain_p"] %></td> 
+        <td class ="k"><%= grainsoilvaluest1["average_rounded_grain_k"] %></td>
+        <td class ="mg"><%= grainsoilvaluest1["average_rounded_grain_mg"] %></td>
+        <td class ="ph"><%= grainsoilvaluest1["average_ph"] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+        </table>
+             
+             
+             
+                <table id="grain" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+         <caption>Soil nutrient values for rotation t2 </caption>
+    <thead>
+      <tr>
+      <th class ="year">Year</th>
+      <th class ="p"> Average Phosphorus values</th>
+      <th class ="k"> Average Potassium values</th>
+      <th class ="mg"> Average Magnessium values</th>
+        <th class ="pH"> Average pH values</th>   
+      </tr>
+    </thead>
+
+    <tbody id="myTable">
+   
+         <%  @Grainsoilvaluest2.each do |grainsoilvaluest2| %>
+        <tr>
+        <td class ="year"><%=grainsoilvaluest2["year_observation"] %></td>
+        <td class ="p"><%=grainsoilvaluest2["average_rounded_grain_p"] %></td> 
+        <td class ="k"><%=grainsoilvaluest2["average_rounded_grain_k"] %></td>
+        <td class ="mg"><%=grainsoilvaluest2["average_rounded_grain_mg"] %></td>
+        <td class ="ph"><%=grainsoilvaluest2["average_ph"] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+        </table>
+             
+          
+             <!-- This JavaScript code allows the system to display the queries recalled above in a dynamic chart. Done with help from  http://highcharttable.org/-->
+      <script>
+  $('table.highchart').highchartTable();
+    </script>
+    </div>
+    </div>
+    
+       

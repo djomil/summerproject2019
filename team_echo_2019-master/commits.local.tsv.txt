@@ -1,0 +1,56 @@
+c43eb19	Bernard Appah	Tue Jun 11 22:41:59 2019	messed it up
+e66ac00	Bernard Appah	Tue Jun 11 22:07:38 2019	fixed all the join queries
+5ddf226	Bernard Appah	Tue Jun 11 14:51:53 2019	not ready to be pushed so stay local
+e3a0580	Bernard Appah	Tue Jun 11 12:28:54 2019	lmao
+b7ef00e	Giovanni Militello	Fri May 31 10:32:48 2019	homepage
+314e1f2	Giovanni Militello	Fri May 31 10:04:57 2019	database modified
+21f3722	Richmond Okezie	Fri May 31 09:36:38 2019	Merge branch 'master' of github.com:UoA-CS5942/team_echo_2019
+4cbb8e9	Richmond Okezie	Fri May 31 09:31:50 2019	new app
+2ad880c	Richmond Okezie	Thu May 30 14:38:21 2019	I am satisfied boy
+42c2d52	Bernard Appah	Thu May 30 10:34:56 2019	made it clean
+df806d7	Ilina Georgieva	Thu May 30 10:02:43 2019	Merge branch 'master' of github.com:UoA-CS5942/team_echo_2019
+1511410	Ilina Georgieva	Thu May 30 10:02:05 2019	prot
+06873a7	Ilina Georgieva	Thu May 30 09:55:22 2019	or
+c4b1326	Ilina Georgieva	Thu May 30 09:47:21 2019	unix
+7766627	Bernard Appah	Thu May 30 09:42:50 2019	Merge branch 'master' of github.com:UoA-CS5942/team_echo_2019
+b28409c	Bernard Appah	Thu May 30 09:41:48 2019	ben the saviour
+d3930ab	Ilina Georgieva	Thu May 30 09:21:53 2019	duh
+d38bce6	Ilina Georgieva	Thu May 30 09:21:39 2019	proficient now
+2602c56	Ilina Georgieva	Thu May 30 08:55:22 2019	updated db
+7fe746f	Ilina Georgieva	Thu May 30 08:46:08 2019	first prototype
+74f59f2	Bernard Appah	Thu May 30 08:42:16 2019	Merge branch 'master' of github.com:UoA-CS5942/team_echo_2019
+6bc4220	Ilina Georgieva	Thu May 30 08:35:33 2019	updated database
+8f8e765	Bernard Appah	Thu May 30 08:29:42 2019	Merge branch 'master' of github.com:UoA-CS5942/team_echo_2019
+3b82325	Ilina Georgieva	Thu May 30 08:24:26 2019	Update teamecho.sql
+098bc3f	Giovanni Militello	Thu May 30 08:22:25 2019	change sql files
+52dcbd6	Giovanni Militello	Thu May 30 08:19:59 2019	s added and change name of the attributes in the sql statement
+8fd16c2	Ilina Georgieva	Wed May 29 15:50:59 2019	replaced rails app with one that can connect to postgresql db
+deb5897	Giovanni Militello	Wed May 29 13:07:17 2019	"table deleted"
+bc68064	Bernard Appah	Wed May 29 13:06:39 2019	Merge branch 'master' of github.com:UoA-CS5942/team_echo_2019
+b7df245	Giovanni Militello	Wed May 29 13:06:33 2019	one table deleted
+155f4fe	Bernard Appah	Wed May 29 13:06:28 2019	well
+00d03ee	Richmond Okezie	Wed May 29 13:03:05 2019	deleted grain
+0ee4f53	MENGFEI ZHANG	Wed May 29 13:00:59 2019	Merge branch 'master' of github.com:UoA-CS5942/team_echo_2019
+7c977c6	MENGFEI ZHANG	Wed May 29 13:00:46 2019	writing comments in grass_allocation.sql
+5835c3a	Bernard Appah	Wed May 29 12:58:22 2019	Merge branch 'master' of github.com:UoA-CS5942/team_echo_2019
+fcc44cc	Bernard Appah	Wed May 29 12:56:59 2019	added tuberose
+8dc5cb0	MENGFEI ZHANG	Wed May 29 12:53:30 2019	sql, duh
+11465da	MENGFEI ZHANG	Wed May 29 12:52:09 2019	grass_allocation sql statement added
+af88ad1	Richmond Okezie	Wed May 29 12:42:38 2019	comfirm deletion
+75ef36f	Richmond Okezie	Wed May 29 12:40:42 2019	Created new index
+916fefd	Giovanni Militello	Wed May 29 12:15:17 2019	come no
+7e6c070	MENGFEI ZHANG	Wed May 29 12:14:03 2019	mengfei
+7476a05	Bernard Appah	Wed May 29 12:11:58 2019	wellll
+c024040	Bernard Appah	Wed May 29 12:10:48 2019	berrrr
+3d8c4dc	Ilina Georgieva	Wed May 29 12:09:29 2019	fix conflicts
+d82a5f7	Giovanni Militello	Wed May 29 12:02:24 2019	lol
+a5eb9f3	MENGFEI ZHANG	Wed May 29 12:00:21 2019	mengfei
+17ef47b	Richmond Okezie	Wed May 29 12:00:11 2019	Added Name
+edb9a41	Ilina Georgieva	Wed May 29 12:00:08 2019	commit
+b17b03f	Bernard Appah	Wed May 29 12:00:08 2019	adim
+929ee5f	Richmond Okezie	Wed May 29 11:42:45 2019	Added Docs
+8a8c730	Richmond Okezie	Wed May 29 11:38:06 2019	First Commit
+c05c3ee	Ilina Georgieva	Wed May 29 10:49:28 2019	Update README.md
+211d14d	Bruce Scharlau	Fri May 24 13:17:39 2019	Update README.md
+c4b9f0c	Bruce Scharlau	Fri May 24 13:17:23 2019	Update README.md
+ddb41f4	Bruce Scharlau	Fri May 24 13:07:18 2019	Initial commit

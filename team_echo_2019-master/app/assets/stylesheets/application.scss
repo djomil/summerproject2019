@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: White;
+}
+
+header.main {
+  text-align: left; // center on mobile
+    position: fixed;
+  @media (min-width: 60em) {
+  text-align: left; // left align on desktop
+ 
+}
+
+    .navbar { 
+        position: fixed;
+    }
+    
+    
+margin: 0;
+    
+    
+h1 {
+   display: none;
+  }
+}
+
+
+
+
+
+
+// code taken by https://wordpress.org/support/topic/center-my-footer-and-make-it-sticky-when-scrolling/
+
+footer {
+    width: 100% !important;
+    text-align: center;
+// it then overlaps with the code    position: fixed;
+    bottom: 0;
+    padding-bottom: 50px !important;
+}
+
+
+.navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}

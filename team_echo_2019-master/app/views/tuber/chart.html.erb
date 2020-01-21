@@ -1,0 +1,177 @@
+<html lang="en">
+<head>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharttable.org/master/jquery.highchartTable-min.js"></script> 
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+   
+</head>
+    <div class="card-group">
+        
+         <div class="col-sm-2" style="background-color: #3CB371">
+               <b >  <%= link_to 'View our records', tuberosejoin_index_path %></b>
+             <h4 style="color:White"> Soil Options:</h4>
+             <ul style="color:White">
+              <li>Ph (for the soil)</li>
+                <li>P (level of soil Phosphorus)</li>
+                <li>K (level of soil Potassium)</li>
+                 <li>MG (level of soil Magnesium)</li>
+                 <li>OM (level of soil Organic Matter)</li>
+            </ul>
+          <br>
+          <h4 style="color:White"> Others: </h4>
+              <ul style="color:White">
+        <li>Swedes and pot fresh weight</li> 
+           <br>
+      <li>Root dm % (Dry matter for the Tuberoses)</li>
+          <br>
+         <li>100% dry matter swede leaf dm y (Dry Matter of Swede Leafs when it corresponds to 100%)</li>
+         <br>
+     <li>Crop s % (Ground Cover of Crops in Spring)</li>
+         <br>
+     <li>Root s % (Ground Cover of Swedes in Spring)</li>
+          <br>
+       <li>Tug s % (Ground Cover of Unsown Grasses in Spring)</li>
+          <br>
+      <li>Tw s % (Ground Cover of Other Weeds in Spring)</li>
+          <br>
+       <li>Tug a % (Ground Cover of Unsown Grasses in Autumn)</li>
+          <br>
+      <li>Tw a % (Ground Cover of Other Weeds in Autumn)</li>
+          <br>
+          
+      <li>Replication (How many complete rotations are repeated)</li>
+          <br>
+      <li>Rotation (Practice of Growing a series of Dissimilar Types of Crops in the Same Area in Sequenced Seasons)</li>
+          <br>
+           </ul>
+           <b >  <%= link_to 'View our records', tuberosejoin_index_path %></b>
+        </div>
+        
+        <div class="col-sm-10">
+    <table id="tuberose" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right"> 
+ <caption>Average Swede yields for subplots a and b (unit= t/ha) </caption>
+    <thead>
+      <tr>
+      <th class ="year"> Year</th>
+      <th class ="Avg">Average swede fresh weight for subplot a</th>
+      <th class ="Avg">Average swede fresh weight for subplot b</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+   
+         <%  @Swedefreshweight.each do |swedefreshweight| %>
+        <tr>
+        <td class ="year"><%= swedefreshweight["year_observation"] %></td>
+        <td class ="round"><%= swedefreshweight["fwt_a"] %></td>
+        <td class ="round"><%= swedefreshweight["fwt_b"] %></td>
+      </tr>
+         <% end %>
+    </tbody>
+    
+  </table>
+         
+            
+              
+             <table id="tuberose" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right"> 
+ <caption> Average Potato yields for subplots a and b (unit= t/ha)  </caption>
+    <thead>
+      <tr>
+      <th class ="year"> Year</th>
+      <th class ="Avg">Average Potato fresh weight for subplot a</th>
+       <th class ="Avg">Average Potato fresh weight for subplot b</th>
+          
+      </tr>
+    </thead>
+    <tbody id="myTable">
+   
+         <%  @Potatofreshweight.each do |potatofreshweight| %>
+        <tr>
+        <td class ="year"><%= potatofreshweight["year_observation"] %></td>
+        <td class ="round"><%= potatofreshweight["fwt_a"] %></td>
+        <td class ="round"><%= potatofreshweight["fwt_b"] %></td>
+
+      </tr>
+        
+         <% end %>
+    </tbody>
+    
+  </table>            
+             
+            <table id="tuberose" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right"> 
+ <caption> Soil Values for rotation t1 </caption>
+    <thead>
+      <tr>
+      <th class ="year"> Year</th>
+      <th class ="AvgP">Average Phosphorus Values</th>
+      <th class ="Avgk">Average Potassium Values</th>
+      <th class ="Avgmg">Average Magnesium Values</th>
+     <th class ="AvgpH">Average pH Values</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+   
+         <% @Soilvaluest1.each do |soilvaluest1| %>
+        <tr>
+        <td class ="year"><%= soilvaluest1["year_observation"] %></td>
+        <td class ="round"><%= soilvaluest1["average_rounded_p"] %></td>
+         <td class ="round"><%= soilvaluest1["average_rounded_k"] %></td>
+         <td class ="round"><%= soilvaluest1["average_rounded_mg"] %></td>
+         <td class ="round"><%= soilvaluest1["average_ph"] %></td>
+      </tr>
+        
+         <% end %>
+    </tbody>
+    
+  </table>
+            
+            
+            
+            
+                                
+             <table id="tuberose" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right"> 
+ <caption> Soil Values for rotation t2 </caption>
+    <thead>
+      <tr>
+      <th class ="year"> Year</th>
+      <th class ="AvgP">Average Phosphorus Values</th>
+      <th class ="Avgk">Average Potassium Values</th>
+      <th class ="Avgmg">Average Magnesium Values</th>
+     <th class ="AvgpH">Average pH Values</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+   
+         <%  @Soilvaluest2.each do |soilvaluest2| %>
+        <tr>
+        <td class ="year"><%= soilvaluest2["year_observation"] %></td>
+        <td class ="round"><%= soilvaluest2["average_rounded_p"] %></td>
+         <td class ="round"><%= soilvaluest2["average_rounded_k"] %></td>
+         <td class ="round"><%= soilvaluest2["average_rounded_mg"] %></td>
+         <td class ="round"><%= soilvaluest2["average_ph"] %></td>
+      </tr>
+        
+         <% end %>
+    </tbody>
+    
+  </table>
+                  
+            
+            
+            
+            
+ <!-- This JavaScript code allows the system to display the queries recalled above in a dynamic chart. Done with help from  http://highcharttable.org-->           
+    <script>
+  $('table.highchart').highchartTable();
+    </script>
+         </div>
+        
+       
+
+
+
+        
+    </div>
+
+
+   

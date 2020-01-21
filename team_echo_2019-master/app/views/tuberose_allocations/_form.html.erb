@@ -1,0 +1,117 @@
+<%= form_with(model: tuberose_allocation, local: true) do |form| %>
+  <% if tuberose_allocation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tuberose_allocation.errors.count, "error") %> prohibited this tuberose_allocation from being saved:</h2>
+
+      <ul>
+      <% tuberose_allocation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tuberose_allocation_id %>
+    <%= form.text_field :tuberose_allocation_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tuberose_id %>
+    <%= form.text_field :tuberose_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plotsubplot_id %>
+    <%= form.text_field :plotsubplot_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year_observation %>
+    <%= form.text_field :year_observation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :swede_and_pots_fwt %>
+    <%= form.text_field :swede_and_pots_fwt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_root_dm %>
+    <%= form.text_field :percentage_root_dm %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_100_dm_swede_leaf_dm_y %>
+    <%= form.text_field :percentage_100_dm_swede_leaf_dm_y %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_crop_s %>
+    <%= form.text_field :percentage_crop_s %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_root_s %>
+    <%= form.text_field :percentage_root_s %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_tug_s %>
+    <%= form.text_field :percentage_tug_s %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_tw_s %>
+    <%= form.text_field :percentage_tw_s %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_tug_a %>
+    <%= form.text_field :percentage_tug_a %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percentage_tw_a %>
+    <%= form.text_field :percentage_tw_a %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pH %>
+    <%= form.text_field :pH %>
+  </div>
+
+  <div class="field">
+    <%= form.label :P %>
+    <%= form.text_field :P %>
+  </div>
+
+  <div class="field">
+    <%= form.label :K %>
+    <%= form.text_field :K %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Mg %>
+    <%= form.text_field :Mg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :OM %>
+    <%= form.text_field :OM %>
+  </div>
+
+  <div class="field">
+    <%= form.label :replication %>
+    <%= form.number_field :replication %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rotation %>
+    <%= form.text_field :rotation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

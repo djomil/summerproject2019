@@ -1,0 +1,170 @@
+<html lang="en">
+<head>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharttable.org/master/jquery.highchartTable-min.js"></script> 
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    </head>   
+    <div class="card-group">
+        
+         <div class="col-sm-2" style="background-color: #3CB371">
+             <b>  <%= link_to 'View our records', grassjoin_index_path %></b>
+             <h4 style="color:White"> Soil Information:</h4>
+             <ul style="color:White">
+              <li>Ph (for the soil)</li>
+                <li>P (level of soil Phosphorus)</li>
+                <li>K (level of soil Potassium)</li>
+                 <li>MG (level of soil Magnesium)</li>
+                 <li>OM (level of soil Organic Matter)</li>
+            </ul>
+          <br>
+          <h4 style="color:White"> Mix: </h4>
+              <ul style="color:White">
+        <li>LUGD (Livestock Unit Grazing Days)</li> 
+           <br>
+      <li>Root dm % (Dry Matter for Swedes and Potatoes)</li>
+          <br>
+         <li>100% dry matter swede leaf dm y (Dry matter of swede leafs if corresponding to 100%)</li>
+         <br>
+     <li>Prg a % (Perennial Ryegrass in Autumn)</li>
+         <br>
+     <li>Tim a % (Ground Cover of Timothy in Autumn)</li>
+          <br>
+       <li>Wc a % (Ground Cover of White Clover in Autumn)</li>
+          <br>
+      <li>Tug a % (Ground Cover of Unsown Grass in Autumn)</li>
+          <br>
+       <li>Tug s % (Ground Cover of Unsown Grass in Spring)</li>
+          <br>
+      <li>Tw a % (Ground Cover of other weeds in Autumn)</li>
+          <br>
+      <li>Metabolism Energy 1</li>
+                  <br>
+      <li>Metabolism Energy 2</li>
+          <br>
+      <li>Digestibility Value 1</li>
+          <br>
+      <li>Digestibility Value 2</li>
+          <br>
+                  <li>100% Dry matter gm1 (Dry matter of grass and clover corrresponding to 100% at the first grass cut)</li>
+                    <br>
+                  <li>100% Dry matter gm2 (Dry matter of grass and clover corrresponding to 100% at the second grass cut)</li>
+                    <br>
+                  <li>100% Dry matter gm3 (Dry matter of grass and clover corrresponding to 100% at the third grass cut)</li>
+                    <br>
+                  <li>100% Dry matter gm4 (Dry matter of grass and clover corrresponding to 100% at the fourth grass cut)</li>
+                    <br>
+                  <li>100% Dry matter gm5 (Dry matter of grass and clover corrresponding to 100% at the fifth grass cut)</li>
+                    <br>
+                  <li>100% Dry matter gm6 (Dry matter of grass and clover corrresponding to 100% at the sixth grass cut)</li>
+                    <br>
+                  <li>100% Dry matter silage 1 (Dry matter of silage corrresponding to 100% at the first silage removal)</li>
+                    <br>
+                  <li>100% Dry matter silage 2 (Dry matter of silage corrresponding to 100% at the second silage removal)</li>
+                    <br>
+      <li>Replication (How many complete rotations are repeated)</li>
+          <br>
+      <li>Rotation (Practice of Growing a series of Dissimilar Types of Crops in the Same Area in Sequenced Seasons)</li>
+          <br>
+           </ul>
+           <b>  <%= link_to 'View our records', grassjoin_index_path %></b>
+        </div>
+        
+        <div class="col-sm-10">
+     <table id="grass" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+    <caption>Average dm silage of grass white clover in subplots a and b (unit= t/ha) </caption>
+    <thead>
+      <tr>
+      <th class="yo"> Year observation</th>
+      <th class="avg"> average dm silage of grass white clover in sublot a</th>
+      <th class="avg2"> average dm silage of grass white clover in sublot b</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+           <%  @Grasswhitecloverdrymatter.each do|grasswhitecloverdrymatter| %>
+        <tr>
+          <td class="yo"><%= grasswhitecloverdrymatter["year_observation"] %></td>
+          <td class="yo"><%= grasswhitecloverdrymatter["grasswhitecloverdrymatter_rounded_a"] %></td>
+          <td class="yo"><%= grasswhitecloverdrymatter["grasswhitecloverdrymatter_rounded_b"] %></td>
+      </tr>
+         <% end %>
+    </tbody>
+  </table>
+           
+            <table id="grass" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+    <caption>Average dm gm of grass red clover in subplots a and b (unit= t/ha) </caption>
+    <thead>
+      <tr>
+      <th class="yo"> Year observation</th>
+      <th class="avg"> average dm gm of grass red clover in sublot a</th>
+      <th class="avg2"> average dm gm of grass red clover in sublot b</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+           <%  @Grassredcloverdrymatter.each do|grassredcloverdrymatter| %>
+        <tr>
+          <td class="yo"><%= grassredcloverdrymatter["year_observation"] %></td>
+          <td class="yo"><%= grassredcloverdrymatter["grassredcloverdrymatter_rounded_a"] %></td>
+          <td class="yo"><%= grassredcloverdrymatter["grassredcloverdrymatter_rounded_b"] %></td>
+      </tr>
+         <% end %>
+    </tbody>
+  </table>
+            
+<table id="grass" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+    <caption>Soil nutrient values for rotation t1 </caption>
+    <thead>
+      <tr>
+      <th class="yo"> Year observation</th>
+      <th class="p">Average Phosphorus Value</th>
+      <th class="k" >Average Potassium Value</th>
+      <th class="mg">Average Magnesium Value</th>
+     <th class="pH">Average pH Value</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+           <%  @Grasssoilvaluet1.each do|grasssoilvaluet1| %>
+        <tr>
+          <td class="yo"><%= grasssoilvaluet1["year_observation"] %></td>
+        <td class="p"><%= grasssoilvaluet1["average_rounded_grass_p"] %></td>
+        <td class="k"><%= grasssoilvaluet1["average_rounded_grass_k"] %></td>
+        <td class="mg"><%= grasssoilvaluet1["average_rounded_grass_mg"] %></td>
+       <td class="pH"><%= grasssoilvaluet1["average_ph"] %></td>
+      </tr>
+         <% end %>
+    </tbody>
+  </table>
+    
+   
+            <table id="grass" class="highchart" data-graph-container-before="1" data-graph-type="line" style = "display:none"  data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+    <caption>Soil nutrient values for rotation t2 </caption>
+    <thead>
+      <tr>
+      <th class="yo"> Year Observation</th>
+      <th class="p">Average Phosphorus Value</th>
+      <th class="k" >Average Potassium Value</th>
+      <th class="mg">Average Magnesium Value</th>
+     <th class="pH">Average pH Value</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+           <%  @Grasssoilvaluet2.each do|grasssoilvaluet2| %>
+        <tr>
+          <td class="yo"><%= grasssoilvaluet2["year_observation"] %></td>
+        <td class="p"><%= grasssoilvaluet2["average_rounded_grass_p"] %></td>
+        <td class="k"><%= grasssoilvaluet2["average_rounded_grass_k"] %></td>
+        <td class="mg"><%= grasssoilvaluet2["average_rounded_grass_mg"] %></td>
+       <td class="pH"><%= grasssoilvaluet2["average_ph"] %></td>
+      </tr>
+         <% end %>
+    </tbody>
+  </table>
+    
+     
+    
+  <!-- This JavaScript code allows the system to display the queries recalled above in a dynamic chart. Done with help from  http://highcharttable.org-->
+     <script>
+     $('table.highchart').highchartTable();
+    </script>
+            </div>
+    
